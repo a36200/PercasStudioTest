@@ -38,6 +38,7 @@ public class FindingWayMaze_Player : MonoBehaviour
         WayCellList = list;
         WayCellVec2List = vector2Ints;
         IndexWayCellList = 0;
+        DebugLogPos();
     }
     /// <summary>
     /// hàm di chuyển đến từng cell
@@ -71,5 +72,13 @@ public class FindingWayMaze_Player : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         GameController.SetNewTurn();
+    }
+    private void DebugLogPos()
+    {
+        Debug.LogError("Way Pos");
+        for (int i = 0; i < WayCellVec2List.Count; i++)
+        {
+            Debug.Log(WayCellVec2List[i]);
+        }
     }
 }
